@@ -1,15 +1,18 @@
 <html>
     <head>
-        <title>Free Blog for thoughts expression</title>
+        <title>Django Girls blog</title>
     </head>
-    
     <body>
-        <h1>Free Blog Website for you to express your thoughts on anything you want</h1>
-        
-        <div>
-            <p>published: 04.01.2017, 00:00</p>
-            <h2><a href="">First post</a></h2>
-            <p>First post ever here <3</p>
-        </div>
+<div>
+    <h1><a href="/">Free Blog</a></h1>
+</div>
+
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
